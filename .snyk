@@ -1,0 +1,25 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:engine.io-client:20160426':
+    - socket.io-client > engine.io-client:
+        reason: None given
+        expires: '2017-04-22T11:02:51.002Z'
+  'npm:ws:20160624':
+    - engine.io > ws:
+        reason: None given
+        expires: '2017-04-22T11:02:51.002Z'
+    - socket.io-client > engine.io-client > ws:
+        reason: None given
+        expires: '2017-04-22T11:02:51.003Z'
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:ms:20151024':
+    - engine.io > debug > ms:
+        patched: '2017-03-23T11:02:51.120Z'
+  'npm:ws:20160920':
+    - engine.io > ws:
+        patched: '2017-03-23T11:02:51.120Z'
+    - socket.io-client > engine.io-client > ws:
+        patched: '2017-03-23T11:02:51.120Z'
